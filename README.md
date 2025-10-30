@@ -9,7 +9,7 @@
 
 ## 🎯 **About Me - The Technical Visionary**
 
-🏛️ **Academic Excellence:** Pre-Final Year B.Tech CSE Student at **PDPM IIITDM Jabalpur** <br/>
+🏛️ **Academic Excellence:** Grad Studnet @BU MSCS and Alumin of **IIIT Jabalpur** <br/>
 🧠 **Mindset:** Technophile | Innovation Catalyst | Performance-Driven Developer <br/>
 💡 **Philosophy:** *"Every line of code is a step toward revolutionary solutions"* <br/>
 🌟 **Leadership:** Team collaboration specialist with exceptional problem-solving acumen <br/>
@@ -119,9 +119,9 @@
 [![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=white)](https://www.leetcode.com/Kushal9889)
 
 **🎯 Problem-Solving Statistics:**
-- **2000+** Problems Solved Across Platforms
+- **1000+** Problems Solved Across Platforms
 - **Expert** Level Problem-Solving Skills
-- **Top 5%** Performance in Multiple Contests
+- **Top 10%** Performance in Multiple Contests
 
 </div>
 
@@ -134,15 +134,13 @@
 ### **📫 Let's Build Something Amazing Together**
 
 [![Resume](https://img.shields.io/badge/📄_Resume-Download-red?style=for-the-badge)](https://drive.google.com/file/d/your-resume-link/view)
-[![Email](https://img.shields.io/badge/📧_Email-Contact_Me-blue?style=for-the-badge)](mailto:kushalk9889@example.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/kushal-kadam)
+[![Email](https://img.shields.io/badge/📧_Email-Contact_Me-blue?style=for-the-badge)](mailto:kushal7887pd@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kushal-gaddamwar/)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Kushal9889)
 
 ### **🌐 Social & Coding Profiles**
 
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/kushal_kadam_official)
-[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://fb.com/kushalkadam)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/kushal_kadam_dev)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/kushal_gaddamwar0811/)
 
 </div>
 
