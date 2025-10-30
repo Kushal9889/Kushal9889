@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋🏻, I'm Kushal Kadam</h1>
+<h1 align="center">Hi 👋🏻, I'm Kushal Gaddamwar</h1>
 <h3 align="center">🚀 Elite Software Engineering Student & Full-Stack Innovation Architect 🚀</h3>
 
 <p align="center">
