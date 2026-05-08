@@ -1,122 +1,140 @@
-<h1 align="center">Kushal Gaddamwar</h1>
-
-<p align="center">
-Cloud & AI Systems Engineer · MS CS
-</p>
-
----
-
-## 🧠 About
-
-I build **cloud-native and AI-driven systems** with a focus on **infrastructure correctness, system reliability, and real-world deployment**.  
-My work sits at the intersection of **distributed systems, backend engineering, and applied AI**, turning research ideas into **production-grade platforms**.
-
-I’m especially interested in **AI systems that run on cloud infrastructure** — inference services, retrieval pipelines, and agent-based workflows designed for scale.
-
----
-
-## 🎯 Focus Areas
-
-- **Cloud Solution Architecture (AWS / GCP)**  
-- **AI Systems on Cloud (RAG, inference, agents)**  
-- **Cloud-Native Engineering (containers, CI/CD, IaC)**  
-
----
-
-## ⚙️ Technical Arsenal
-
-### Languages
-![Python](https://img.shields.io/badge/Python-14354C?style=flat&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=java&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![C++](https://img.shields.io/badge/C%2FC++-00599C?style=flat&logo=c%2B%2B&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-003B57?style=flat)
-
----
-
-### Cloud & DevOps
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonaws&logoColor=white)
-![GCP](https://img.shields.io/badge/GCP-4285F4?style=flat&logo=googlecloud&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-623CE4?style=flat&logo=terraform&logoColor=white)
-![CI/CD](https://img.shields.io/badge/CI%2FCD-000000?style=flat)
-
----
-
-### Databases & Storage
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-00000F?style=flat&logo=mysql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat&logo=mongodb&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat&logo=redis&logoColor=white)
-
----
-
-### AI / ML Systems
-![RAG](https://img.shields.io/badge/RAG%20Pipelines-111111?style=flat)
-![LLM Inference](https://img.shields.io/badge/LLM%20Inference-111111?style=flat)
-![AI Agents](https://img.shields.io/badge/Agentic%20AI-111111?style=flat)
-![LangChain](https://img.shields.io/badge/LangChain-0B5FFF?style=flat)
-![LangSmith](https://img.shields.io/badge/LangSmith-0B5FFF?style=flat)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white)
-
----
-
-## 🚀 Selected Systems & Projects
-
-- **Cloud-Based Subscription Platform**  
-  Stripe billing, user profiles, backend workflows on AWS
-
-- **AI RAG & Agent Pipeline**  
-  Ingestion → embeddings → retrieval → inference using LangChain-based orchestration
-
-- **Cloud Automation Systems**  
-  CI/CD pipelines, containerized microservices, infra automation with Terraform
-
----
-
-## 📚 Research & Credentials
-
-- **IEEE Author (2024)** — *Deep Learning for Contextual Bug Detection and Automated Fixes*  
-- **IGI Global Co-Author (2024)** — *Cyber-Physical Systems: Security & Optimization*  
-- **JEE Mains:** 99.1 percentile (Top 10,000 nationwide)
-
----
-
-## 🎓 Background
-
-- **MS in Computer Science**  
-- Strong foundations in **distributed systems, cloud architecture, and system design**
-
----
-
-## 🧭 Currently
-
-- Building **AI-native, cloud-first systems**   
-- AWS **Solutions Architect – Professional (in progress)**  
-- Open to **Cloud / SDE / DevOps roles (FAANG-adjacent)**
-
----
-
-## 📊 GitHub Activity
-
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Kushal9889&show_icons=true&hide_border=true&theme=dark" height="165"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kushal9889&layout=compact&hide_border=true&theme=dark" height="165"/>
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,30:0f2027,70:203a43,100:2c5364&height=220&section=header&text=Kushal%20Gaddamwar&fontSize=56&fontColor=ffffff&fontAlignY=36&desc=I%20build%20AI%20systems%20that%20think%2C%20route%2C%20and%20act&descAlignY=58&descSize=18&animation=fadeIn"/>
+
 </div>
 
----
+<div align="center">
 
-## 🤝 Collaboration
+[
 
-If you're building:
-- cloud-native platforms  
-- AI systems with real architecture  
-- infra-heavy or developer-focused 
+<br/>
 
-Happy to collaborate or contribute.
+[
+[
+[
+[
 
----
+</div>
 
-_Always building. Always refining._
+***
+
+## The Thing I'm Actually Obsessed With
+
+Most people use LLMs as smart autocomplete. I'm interested in the harder question:
+
+> **How do you build a system where multiple AI agents coordinate, remember context, route intelligently, and stay within cost constraints — in production?**
+
+That question led me to build **BU Life AI** — a LangGraph multi-agent system where a supervisor routes natural language queries to specialized ReAct agents (places, resources, events), backed by a hybrid BM25 + vector search RAG pipeline, with SSE streaming, LangSmith tracing, and a singleton retriever pattern that cut LLM API calls by 70%.
+
+It's not a demo. It's deployed. It runs.
+
+***
+
+## What I'm Currently Thinking About
+
+```
+├── How context window management changes agent design at scale
+├── When to use graph-state (LangGraph) vs linear chains vs raw tool calls
+├── The cost/latency tradeoff between dense retrieval and BM25 in hybrid RAG
+├── MCP (Model Context Protocol) as the emerging standard for tool-calling infra
+└── Why most "agentic" systems aren't actually agentic — just long prompt chains
+```
+
+***
+
+## Stack I Actually Use
+
+<div align="center">
+
+**Agent Orchestration**
+
+
+
+
+
+
+
+**Models & Inference**
+
+
+
+
+
+
+
+**RAG & Vector Search**
+
+
+
+
+
+
+
+**Backend & Infra**
+
+
+
+
+
+
+
+
+
+
+</div>
+
+***
+
+## What I've Shipped
+
+### 🤖 [BU Life AI](https://bulife-ai.netlify.app) — Multi-Agent Campus Assistant
+*The project where I learned what "production agentic AI" actually means*
+
+Built a LangGraph supervisor that dispatches to three specialized ReAct agents. The hard parts weren't the agents themselves — they were **thread isolation for concurrent sessions**, **singleton retriever initialization** to avoid cold-start overhead, and **hybrid BM25 + 1024-dim vector search** that beats pure semantic retrieval on sparse queries.
+
+Reduced per-query LLM API calls by **70%** via response caching. Streamed tokens end-to-end with SSE. Traced everything with LangSmith. Stack: LangGraph · FastAPI · Next.js · Groq · NVIDIA NIM · PGVector · Neon · Render · Netlify.
+
+***
+
+### 📊 [Sorting Algorithm Visualizer](https://sorting-algorithm-visualizerrr.netlify.app)
+*Redux state machine powering async, configurable algorithm visualization*
+
+Redux-driven React app — 6+ algorithms, async execution, 100–1500ms configurable timing, quicksort with 4 pivot strategies, O(n²) vs O(n log n) comparison at a glance.
+
+***
+
+## GitHub Activity
+
+<div align="center">
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username=Kushal9889&show_icons=true&hide_border=true&theme=github_dark&bg_color=0d1117&title_color=4F98A3&icon_color=4F98A3&text_color=c9d1d9&rank_icon=github&include_all_commits=true"/>
+  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kushal9889&layout=compact&hide_border=true&theme=github_dark&bg_color=0d1117&title_color=4F98A3&text_color=c9d1d9&langs_count=6"/>
+</div>
+
+<div align="center">
+  <img width="68%" src="https://github-readme-streak-stats.herokuapp.com/?user=Kushal9889&theme=github-dark-blue&hide_border=true&background=0d1117&ring=4F98A3&fire=4F98A3&currStreakLabel=4F98A3"/>
+</div>
+
+***
+
+## A Few Things Worth Knowing
+
+- 📄 **IEEE-published** at ICAICCIT 2024 on deep learning for automated bug detection
+- 📄 **IGI Global co-author** on Cyber-Physical Systems security
+- 🎓 **BU MSCS** (GPA 3.6) · graduating December 2026 · coursework in Generative AI, AI Systems, Web Mining
+- 🏆 **JEE Mains 99.1 percentile** — top 0.08% of 1.2 million students
+- ⚔️ **CodeChef 64th worldwide** — February Long Challenge 2022
+- 🧑‍🏫 **Co-founded BITBYTE** at IIIT-DM — mentored 70+ students into Google Kickstart top 200, pre-final internships, and GSoC
+- 🎪 Ran a cultural fest that raised ₹10L+ (~$12K) from 25+ sponsors across 13 colleges
+
+***
+
+<div align="center">
+
+*Building systems that think. Open to Agentic AI / Applied AI / SWE roles — F-1 OPT 2026.*
+
+[
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,50:203a43,100:0d1117&height=100&section=footer"/>
+
+</div>
