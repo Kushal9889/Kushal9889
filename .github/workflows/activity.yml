@@ -1,0 +1,17 @@
+name: shipped recently — auto feed
+on:
+  schedule: [{cron: "*/30 * * * *"}]
+  workflow_dispatch:
+  push: {branches: [main]}
+permissions: {contents: write}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jamesgeorge007/github-activity-readme@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          MAX_LINES: 8
+          COMMIT_MSG: "chore: refresh shipped-recently feed"
