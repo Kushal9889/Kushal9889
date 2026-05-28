@@ -210,7 +210,8 @@ SaaS. Redis caching + async AJAX bumped API response speed by **30%** for 1K+ DA
 
 <br/>
 
-<img width="62%" src="https://streak-stats.demolab.com/?user=Kushal9889&theme=dark&hide_border=true&background=0d1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF"/>
+<img width="48%" src="https://github-readme-stats-one-steel-84.vercel.app/api?username=Kushal9889&show_icons=true&hide_border=true&bg_color=0d1117&title_color=58A6FF&icon_color=58A6FF&text_color=c9d1d9&count_private=true&include_all_commits=true"/>
+<img width="48%" src="https://streak-stats.demolab.com/?user=Kushal9889&theme=dark&hide_border=true&background=0d1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF"/>
 
 <br/><br/>
 
