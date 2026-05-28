@@ -357,7 +357,7 @@ Decision-making, security trade-offs, and optimization in urban CPS environments
 
 <!-- SNAKE ANIMATION ────────────────────────────────────────────────────── -->
 <!-- Requires GitHub Actions workflow — see below -->
-<img width="92%" src="https://raw.githubusercontent.com/Kushal9889/Kushal9889/output/github-contribution-grid-snake-dark.svg" alt="contribution snake animation"/>
+<img width="92%" src="https://raw.githubusercontent.com/Kushal9889/Kushal9889/output/github-contribution-grid-snake-dark.svg?v=2" alt="contribution snake animation"/>
 
 <br/><br/>
 
