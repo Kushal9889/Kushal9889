@@ -63,7 +63,7 @@ I got into this because most "AI products" are a prompt wrapped in a UI, and I c
 
 <!-- AUTO-UPDATED via .github/workflows/activity.yml — last 5 PR/Issue/Release events.
      The action commits this section, which keeps last-commit badge fresh 24/7. -->
-### 📡 shipped recently <sub><sub><!--LAST_UPDATED-->auto-stamped<!--/LAST_UPDATED--></sub></sub>
+### 📡 shipped recently <sub><sub><!--LAST_UPDATED-->2026-05-28 09:40 UTC<!--/LAST_UPDATED--></sub></sub>
 
 <!--START_SECTION:activity-->
 > *Auto-feed populates here after the first workflow run — latest 5 releases / PRs / pushed branches across all repos, each dated. The badge above updates within minutes of every push.*
@@ -321,7 +321,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          sed -i "s|<!--LAST_UPDATED-->.*<!--/LAST_UPDATED-->|<!--LAST_UPDATED-->$(date -u +'%Y-%m-%d %H:%M UTC')<!--/LAST_UPDATED-->|" README.md
+          sed -i "s|<!--LAST_UPDATED-->2026-05-28 09:40 UTC<!--/LAST_UPDATED-->|" README.md
           git config user.name github-actions
           git config user.email actions@github.com
           git diff --quiet || (git commit -am "chore: stamp" && git push)
