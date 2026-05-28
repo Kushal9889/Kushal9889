@@ -1,0 +1,15 @@
+name: timestamp bump
+on:
+  schedule: [{cron: "0 */6 * * *"}]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  stamp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          sed -i "s|<!--LAST_UPDATED-->.*<!--/LAST_UPDATED-->|<!--LAST_UPDATED-->$(date -u +'%Y-%m-%d %H:%M UTC')<!--/LAST_UPDATED-->|" README.md
+          git config user.name github-actions
+          git config user.email actions@github.com
+          git diff --quiet || (git commit -am "chore: stamp" && git push)
