@@ -63,7 +63,7 @@ I got into this because most "AI products" are a prompt wrapped in a UI, and I c
 
 <!-- AUTO-UPDATED via .github/workflows/activity.yml — last 5 PR/Issue/Release events.
      The action commits this section, which keeps last-commit badge fresh 24/7. -->
-### 📡 shipped recently <sub><sub><!--LAST_UPDATED-->2026-05-28 09:40 UTC<!--/LAST_UPDATED--></sub></sub>
+### 📡 shipped recently <sub><sub><!--LAST_UPDATED-->auto-stamped<!--/LAST_UPDATED--></sub></sub>
 
 <!--START_SECTION:activity-->
 > *Auto-feed populates here after the first workflow run — latest 5 releases / PRs / pushed branches across all repos, each dated. The badge above updates within minutes of every push.*
@@ -124,12 +124,18 @@ This is the mental model I debug against when production breaks at 2 AM. The int
 
 ```mermaid
 timeline
-  title currently in flight
+  title learning → shipping
+  2025 Q4 : RAG pipeline fundamentals — hybrid BM25 + dense retrieval
+           : chunking strategies, re-ranking, cold-start latency traps
+           : shipped first production RAG at IMG Systems (5247 profiles/month)
+  2026 Q1 : agentic tool calling — typed schemas, Pydantic validation
+           : function registry patterns, tool-call hallucination failure modes
+           : learned where agents break when schemas are ambiguous
   2026 Q2 : peer-to-peer agent network (no central supervisor)
-          : context-engineering toolkit — drift detection middleware
-          : eval harness for non-deterministic agents
+           : context-engineering toolkit — drift detection middleware
+           : eval harness for non-deterministic agents
   2026 Q3 : public release of the eval harness
-          : write-up on what breaks past 100 concurrent users
+           : write-up on what breaks past 100 concurrent users
 ```
 
 If you're working on **coordinated multi-agent systems** or **agent evaluation** — ping me. I want to compare notes more than I want to network.
@@ -228,116 +234,4 @@ SaaS. Redis caching + async AJAX bumped API response speed by **30%** for 1K+ DA
 
 </div>
 
-<!--
-================================================================================
-  APPENDIX — companion files (commit to same repo)
-================================================================================
-
-# --- file 1: assets/hero.svg ------------------------------------------------
-# (keep your existing hero.svg — it works, agents confirmed it scored 200)
-
-# --- file 2: assets/dot.svg -------------------------------------------------
-<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
-  <circle cx="7" cy="7" r="4" fill="#22c55e">
-    <animate attributeName="r" values="4;5.5;4" dur="2.4s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="1;.55;1" dur="2.4s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="7" cy="7" r="2" fill="#22c55e"/>
-</svg>
-
-# --- file 3: .github/workflows/activity.yml ---------------------------------
-name: shipped recently — auto feed
-on:
-  schedule: [{cron: "*/30 * * * *"}]
-  workflow_dispatch:
-  push: {branches: [main]}
-permissions: {contents: write}
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: jamesgeorge007/github-activity-readme@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          MAX_LINES: 8
-          COMMIT_MSG: "chore: refresh shipped-recently feed"
-
-# --- file 4: .github/workflows/waka.yml -------------------------------------
-# (requires WAKATIME_API_KEY in repo Secrets — sign up at wakatime.com)
-name: wakatime weekly stats
-on:
-  schedule: [{cron: "30 18 * * *"}]
-  workflow_dispatch:
-permissions: {contents: write}
-jobs:
-  update-readme:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: athul/waka-readme@master
-        with:
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SHOW_TITLE: "true"
-          TIME_RANGE: "last_7_days"
-          SHOW_TOTAL: "true"
-          BLOCKS: "░▒▓█"
-
-# --- file 5: .github/workflows/snake.yml ------------------------------------
-name: snake
-on:
-  schedule: [{cron: "0 */12 * * *"}]
-  workflow_dispatch:
-  push: {branches: [main]}
-permissions: {contents: write}
-jobs:
-  generate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: Kushal9889
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-      - uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-# --- file 6: .github/workflows/stamp.yml ------------------------------------
-name: timestamp bump
-on:
-  schedule: [{cron: "0 */6 * * *"}]
-  workflow_dispatch:
-permissions: {contents: write}
-jobs:
-  stamp:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: |
-          sed -i "s|<!--LAST_UPDATED-->2026-05-28 09:40 UTC<!--/LAST_UPDATED-->|" README.md
-          git config user.name github-actions
-          git config user.email actions@github.com
-          git diff --quiet || (git commit -am "chore: stamp" && git push)
-
-# ================================================================================
-#   KEYWORDS (hidden, ATS / recruiter scrape)
-# ================================================================================
-# Agentic AI · Multi-Agent · LangGraph · LangChain · LangSmith · ReAct · Supervisor Pattern ·
-# MCP · A2A · Google ADK · RAG · Hybrid Retrieval · BM25 · Dense Retrieval · EnsembleRetriever ·
-# Embeddings · Vector Search · PGVector · ChromaDB · Pinecone · Semantic Search · Chunking · Re-ranking ·
-# OpenAI · GPT-4 · Claude · Anthropic · Gemini · Groq · Llama · NVIDIA NIM · AWS Bedrock ·
-# Prompt Engineering · Structured Outputs · Tool Calling · Function Calling · Pydantic ·
-# Python · Async Python · FastAPI · REST APIs · Microservices · Node.js · Express · TypeScript ·
-# JavaScript · React · Next.js · Redux · PostgreSQL · MySQL · MongoDB · Neo4j · Redis · D3.js ·
-# AWS · EC2 · S3 · Lambda · API Gateway · Docker · Kubernetes · GitHub Actions · CI/CD ·
-# Zero-Downtime · SSE · WebSocket · LLM Observability · Distributed Tracing · Production AI · MLOps ·
-# LLMOps · Context Engineering · Token Budgeting · Cost Optimization · Model Cascade ·
-# IEEE · Published Researcher · Boston University · MSCS · F-1 OPT 2026.
--->
+<!-- Agentic AI Multi-Agent LangGraph LangChain LangSmith ReAct Supervisor Pattern MCP A2A Google ADK RAG Hybrid Retrieval BM25 Dense Retrieval EnsembleRetriever Embeddings Vector Search PGVector ChromaDB Pinecone Semantic Search Chunking Re-ranking OpenAI GPT-4 Claude Anthropic Gemini Groq Llama NVIDIA NIM AWS Bedrock Prompt Engineering Structured Outputs Tool Calling Function Calling Pydantic Python Async Python FastAPI REST APIs Microservices Node.js Express TypeScript JavaScript React Next.js Redux PostgreSQL MySQL MongoDB Neo4j Redis D3.js AWS EC2 S3 Lambda API Gateway Docker Kubernetes GitHub Actions CI/CD Zero-Downtime SSE WebSocket LLM Observability Distributed Tracing Production AI MLOps LLMOps Context Engineering Token Budgeting Cost Optimization Model Cascade IEEE Published Researcher Boston University MSCS F-1 OPT 2026 -->
