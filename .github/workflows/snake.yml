@@ -1,16 +1,12 @@
-name: Generate Snake Animation
+name: snake
 on:
-  schedule:
-    - cron: "0 */12 * * *"   # every 12 hours
+  schedule: [{cron: "0 */12 * * *"}]
   workflow_dispatch:
-  push:
-    branches: [main]
-
+  push: {branches: [main]}
+permissions: {contents: write}
 jobs:
   generate:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: Platane/snk/svg-only@v3
