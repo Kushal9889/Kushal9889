@@ -127,12 +127,11 @@ timeline
   title learning → shipping
   2025 Q4 : RAG pipeline fundamentals — hybrid BM25 + dense retrieval
            : chunking strategies, re-ranking, cold-start latency traps
-           : shipped first production RAG at IMG Systems (5247 profiles/month)
   2026 Q1 : agentic tool calling — typed schemas, Pydantic validation
            : function registry patterns, tool-call hallucination failure modes
            : learned where agents break when schemas are ambiguous
-  2026 Q2 : peer-to-peer agent network (no central supervisor)
-           : context-engineering toolkit — drift detection middleware
+  2026 Q2 : Production Agentic -RAGAS, Langsmith,NeMo Guardrails,Quantization
+           :peer-to-peer agent network (no central supervisor)
            : eval harness for non-deterministic agents
   2026 Q3 : public release of the eval harness
            : write-up on what breaks past 100 concurrent users
