@@ -66,7 +66,7 @@ I got into this because most "AI products" are a prompt wrapped in a UI, and I c
 ### 📡 shipped recently <sub><sub><!--LAST_UPDATED-->2026-07-19 13:19 UTC<!--/LAST_UPDATED--></sub></sub>
 
 <!--START_SECTION:activity-->
-> *Auto-feed populates here after the first workflow run — latest 5 releases / PRs / pushed branches across all repos, each dated. The badge above updates within minutes of every push.*
+1. ℹ️ Labeled issue [#4846](https://github.com/langchain-ai/deepagents/issues/4846) in [langchain-ai/deepagents](https://github.com/langchain-ai/deepagents)
 <!--END_SECTION:activity-->
 
 ---
