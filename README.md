@@ -66,7 +66,7 @@ I got into this because most "AI products" are a prompt wrapped in a UI, and I c
 ### 📡 shipped recently <sub><sub><!--LAST_UPDATED-->2026-07-29 19:17 UTC<!--/LAST_UPDATED--></sub></sub>
 
 <!--START_SECTION:activity-->
-1. 🗣 Commented on [#5113](https://github.com/langchain-ai/deepagents/issues/5113#issuecomment-5119986569) in [langchain-ai/deepagents](https://github.com/langchain-ai/deepagents)
+1. 🗣 Commented on [#4832](https://github.com/langchain-ai/deepagents/issues/4832#issuecomment-5121901416) in [langchain-ai/deepagents](https://github.com/langchain-ai/deepagents)
 <!--END_SECTION:activity-->
 
 ---
