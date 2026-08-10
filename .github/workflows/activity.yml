@@ -1,17 +1,66 @@
-name: shipped recently — auto feed
+name: recently
+
+# Rewrites the "recently" block from real public events.
+#
+# The previous version of this repository ran a workflow that bumped a
+# timestamp every six hours. It produced 297 commits that changed nothing, and
+# anyone opening the commit list could see that is all they were. This one runs
+# weekly and only commits when the content actually changed.
 on:
-  schedule: [{cron: "*/30 * * * *"}]
+  schedule:
+    - cron: "0 6 * * 1"
   workflow_dispatch:
-  push: {branches: [main]}
-permissions: {contents: write}
+
+permissions:
+  contents: write
+
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: jamesgeorge007/github-activity-readme@master
+
+      - name: Build the block
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          MAX_LINES: 8
-          COMMIT_MSG: "chore: refresh shipped-recently feed"
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          # Public events, newest first. Issues and pull requests only: a push
+          # event says nothing a reader cares about.
+          gh api "users/${{ github.repository_owner }}/events/public?per_page=100" \
+            --jq '[.[]
+                   | select(.type == "IssuesEvent" or .type == "PullRequestEvent")
+                   | select(.payload.action == "opened")
+                   | "- \(.payload.issue.title // .payload.pull_request.title) in [\(.repo.name)](https://github.com/\(.repo.name))"]
+                  | unique | .[0:5] | .[]' > /tmp/lines.txt || true
+
+          # Fail closed. An empty API response must not blank the section.
+          if [ ! -s /tmp/lines.txt ]; then
+            echo "no events returned, leaving the existing block alone"
+            exit 0
+          fi
+
+          python3 - <<'PY'
+          import pathlib, re
+          block = pathlib.Path("/tmp/lines.txt").read_text().strip()
+          readme = pathlib.Path("README.md")
+          text = readme.read_text()
+          new = re.sub(
+              r"<!--START_ACTIVITY-->.*?<!--END_ACTIVITY-->",
+              f"<!--START_ACTIVITY-->\n{block}\n<!--END_ACTIVITY-->",
+              text,
+              flags=re.S,
+          )
+          if new != text:
+              readme.write_text(new)
+          PY
+
+      - name: Commit only if something changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git diff --quiet README.md && echo "nothing changed" && exit 0
+          git add README.md
+          git commit -m "Refresh the recently block"
+          git push
