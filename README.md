@@ -1,237 +1,85 @@
-<!--
-================================================================================
-  KUSHAL GADDAMWAR — GitHub Profile README v3 (elite tier)
-  Path: github.com/Kushal9889/Kushal9889/README.md
+I build multi-agent systems and the retrieval that keeps them honest.
 
-  Companion workflows (drop in .github/workflows/ of same repo):
-    - activity.yml  → auto-updates "Shipped recently" feed every 30 min
-    - waka.yml      → auto-updates WakaTime weekly stats daily
-    - snake.yml     → regenerates contribution snake every 12 h
-    - stamp.yml     → bumps the "last updated" timestamp every 6 h
+AI Engineer at **Boston University's Questrom Computational Lab**, MSCS candidate, graduating December 2026. First author on an IEEE paper in automated program repair. Available January 2027.
 
-  All four workflow files are in APPENDIX at bottom of this file.
-================================================================================
--->
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Kushal9889/Kushal9889/main/assets/hero.svg">
-  <img src="https://raw.githubusercontent.com/Kushal9889/Kushal9889/main/assets/hero.svg" alt="kushal gaddamwar" width="100%">
-</picture>
-
-<br/>
-
-<!-- "breathing presence" dot + one-line owned verb (no stack list) -->
-<h3>
-  <img src="https://raw.githubusercontent.com/Kushal9889/Kushal9889/main/assets/dot.svg" width="14" height="14" alt="·" align="center"/>
-  &nbsp;I build multi-agent systems that survive production.
-</h3>
-
-<!-- authority strip — italic named-drop, no badges. recruiter eye anchors on proper nouns -->
-<p><em>IEEE-published · Boston University MSCS · shipping on LangGraph (Harrison Chase) + Anthropic MCP since GPT-3.5 · F-1 OPT 2026.</em></p>
-
-<!-- live "still active" signals — last commit, commit cadence, profile pulse -->
-<p>
-  <img src="https://img.shields.io/github/last-commit/Kushal9889/Kushal9889?style=flat-square&color=58A6FF&labelColor=0d1117&label=last%20updated"/>
-  <img src="https://img.shields.io/github/commit-activity/w/Kushal9889/Kushal9889?style=flat-square&color=58A6FF&labelColor=0d1117&label=commits%2Fweek"/>
-  <img src="https://komarev.com/ghpvc/?username=Kushal9889&style=flat-square&color=58A6FF&label=visitors&labelColor=0d1117"/>
-</p>
-
-<!-- minimal CTA row — only verifiable channels, no logo wall -->
-<p>
-  <a href="https://linkedin.com/in/kushal-gaddamwar">linkedin</a>
-  &nbsp;·&nbsp;
-  <a href="mailto:kushal7887pd@gmail.com">kushal7887pd@gmail.com</a>
-  &nbsp;·&nbsp;
-  <a href="https://bulife-ai.netlify.app">live demo</a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/Kushal9889?tab=repositories">repos</a>
-</p>
-
-</div>
+[Portfolio](https://kushal-portfolio-223.netlify.app) · [LinkedIn](https://linkedin.com/in/kushal-gaddamwar) · [ORCID 0009-0009-9318-1616](https://orcid.org/0009-0009-9318-1616) · kushal7887pd@gmail.com
 
 ---
 
-### the short version
+### recently
 
-Finishing **MS CS at Boston University, December 2026.** B.Tech in CS from **IIIT Jabalpur.** Published in **IEEE.** Two internships in production AI shipping (IMG Systems, Growaza). **F-1 OPT window opens January 2027.** Currently in conversations for full-time and summer roles at frontier AI labs and Series A-C startups building agentic systems.
-
-I got into this because most "AI products" are a prompt wrapped in a UI, and I couldn't stop thinking about what happens when you engineer the system *around* the model. That's where it gets interesting, and where it also tends to break.
-
-<br/>
-
-<!-- AUTO-UPDATED via .github/workflows/activity.yml — last 5 PR/Issue/Release events.
-     The action commits this section, which keeps last-commit badge fresh 24/7. -->
-### 📡 shipped recently <sub><sub><!--LAST_UPDATED-->2026-08-10 18:58 UTC<!--/LAST_UPDATED--></sub></sub>
-
-<!--START_SECTION:activity-->
-1. 🗣 Commented on [#5190](https://github.com/langchain-ai/deepagents/issues/5190#issuecomment-5159357542) in [langchain-ai/deepagents](https://github.com/langchain-ai/deepagents)
-<!--END_SECTION:activity-->
+<!--START_ACTIVITY-->
+- Reported [langchain-ai/deepagents#4846](https://github.com/langchain-ai/deepagents/issues/4846); fixed by a maintainer in [#4925](https://github.com/langchain-ai/deepagents/pull/4925)
+- Rebuilt [kushal-portfolio](https://github.com/Kushal9889/kushal-portfolio) around a LangGraph agent with measured latency
+<!--END_ACTIVITY-->
 
 ---
 
-## how I think about agentic systems
+### what I've built
 
-```text
-                       user intent
-                            │
-                            ▼
-        ┌──────────────────────────────────────────┐
-        │  supervisor / router                     │
-        │  ↳ semantic routing                      │
-        │  ↳ context-drift detection               │
-        │  ↳ token-budget gate before any LLM call │
-        └──────────────────────────────────────────┘
-                │                       │
-                ▼                       ▼
-        ┌────────────────┐      ┌────────────────┐
-        │  agent A       │      │  agent B       │   ← parallel
-        │  ReAct loop    │      │  ReAct loop    │     thread-isolated
-        │  scratchpad ≠  │      │  scratchpad ≠  │     LangGraph state
-        │  final answer  │      │  final answer  │
-        └────────────────┘      └────────────────┘
-                │                       │
-                └───────────┬───────────┘
-                            ▼
-                ┌─────────────────────────┐
-                │  tool layer             │
-                │  Pydantic-typed I/O     │
-                │  no raw JSON reaches    │
-                │  the agent. ever.       │
-                └─────────────────────────┘
-                            │
-                            ▼
-                ┌─────────────────────────┐
-                │  memory                 │
-                │  in-context  → bounded  │
-                │  episodic    → per-thread│
-                │  semantic    → PGVector  │
-                │                + BM25    │
-                │  procedural  → tools     │
-                └─────────────────────────┘
-                            │
-                            ▼
-            streaming output · SSE · async FastAPI
-            traced (LangSmith) · cached (Redis) · cost-attributed per node
-```
+**[BU Life AI](https://bulife-ai.netlify.app)** · [source](https://github.com/Kushal9889/BU-Life-AI)
+A campus assistant for Boston University students, live with real traffic. A LangGraph supervisor classifies intent and routes to one of **3 specialised ReAct agents**, each owning its own thread so concurrent users never share state. Retrieval fuses BM25 with **NV-Embed 1024-dimension** vectors over pgvector through an EnsembleRetriever. That routing decision is what cut **redundant LLM calls by 70%**.
 
-This is the mental model I debug against when production breaks at 2 AM. The interesting parts nobody puts in tutorials: **context drift after the 20th turn**, **cold-start retriever latency**, **state bleed across concurrent sessions**, **tool-call hallucinations on ambiguous schemas**, **cost explosion under load.** Every one of those is a story I can tell you.
+The trade-off worth asking about: orchestration complexity bought state isolation. One agent with a long prompt was simpler and mixed tool namespaces across housing, dining, and events until retrieval started contaminating.
+
+**[Contextual bug detection](https://github.com/Kushal9889/Deep-Learning-for-Contextual-Bug-Detection-and-Automated-Fixes-in-Software-Systems)** · IEEE ICAICCIT 2024, first author
+A transformer reads tokens and syntax; a graph network reads module dependencies; the two are concatenated and scored together. The combined model reached **91.4% accuracy** against 88.2% for the transformer alone. The graph branch scores lowest on its own at 85.7%, which is the point: structure without content cannot tell a correct function from a broken one.
+
+**Enterprise document intelligence** · Boston University, Questrom Computational Lab
+A production agentic RAG platform on Azure for an enterprise consulting client, owned from ingestion through deployment. A LangGraph agent exposing **14 tools** for document question answering, comparison, and template-driven generation. Hybrid retrieval with LLM query rewriting and Cohere re-ranking, LLM-as-a-Judge evaluation for hallucination rate, PII redaction guardrails, and a Cosmos DB Gremlin knowledge graph linking clients, projects, and technologies.
 
 ---
 
-## what I'm currently shipping
+### open source
 
-```mermaid
-timeline
-  title learning → shipping
-  2025 Q4 : RAG pipeline fundamentals — hybrid BM25 + dense retrieval
-           : chunking strategies, re-ranking, cold-start latency traps
-  2026 Q1 : agentic tool calling — typed schemas, Pydantic validation
-           : function registry patterns, tool-call hallucination failure modes
-           : learned where agents break when schemas are ambiguous
-  2026 Q2 : Production Agentic -RAGAS, Langsmith,NeMo Guardrails,Quantization
-           :peer-to-peer agent network (no central supervisor)
-           : eval harness for non-deterministic agents
-  2026 Q3 : public release of the eval harness
-           : write-up on what breaks past 100 concurrent users
-```
+**Reported** [langchain-ai/deepagents#4846](https://github.com/langchain-ai/deepagents/issues/4846): `CompositeBackend.ls("/")` aggregated results at the root and discarded errors from the default backend, so a caller whose backend had failed saw a healthy but nearly empty filesystem. Filed with a reproduction and a proposed fix mirroring the existing `grep` root-merge check. A LangChain maintainer authored and merged the fix in [#4925](https://github.com/langchain-ai/deepagents/pull/4925) three days later, crediting the report by name.
 
-If you're working on **coordinated multi-agent systems** or **agent evaluation** — ping me. I want to compare notes more than I want to network.
+I did not write the patch. `deepagents` restricts merges to organisation contributors. What the report demonstrates is the part that transfers: reading an unfamiliar production SDK closely enough to find where it contradicts its own documented invariant, and writing it up precisely enough that someone senior acted without needing to ask a question.
 
 ---
 
-## things I've built
+### publications
 
-**🤖 [BU Life AI](https://bulife-ai.netlify.app) — live, real users, real traffic.**
-LangGraph supervisor routing to **3 ReAct agents** over a PGVector + BM25 hybrid index, NVIDIA NV-EmbedQA 1024-dim embeddings. SSE streaming on async FastAPI. Redis caching cut model API calls by **~70%**. LangSmith for tracing what the agent actually did vs. what it claimed. Dockerized, runs on Render + Netlify with zero-downtime deploys via GitHub Actions.
-*This is the project I'd point at if you want to know how I think.*
+**Deep Learning for Contextual Bug Detection and Automated Fixes in Software Systems**
+ICAICCIT 2024, IEEE, pp. 624–629. First author.
+[IEEE Xplore](https://ieeexplore.ieee.org/document/10912101) · [doi:10.1109/ICAICCIT64383.2024.10912101](https://doi.org/10.1109/ICAICCIT64383.2024.10912101) · [repository](https://github.com/Kushal9889/Deep-Learning-for-Contextual-Bug-Detection-and-Automated-Fixes-in-Software-Systems)
 
-**🧮 [Sorting Visualizer](https://sorting-algorithm-visualizerrr.netlify.app) — 2022, still ships.**
-Redux as a finite state machine. **6 sorting algorithms · 4 quicksort pivot strategies · live O(n²) vs. O(n log n) comparison.** Old project that taught me state — I keep linking it because it still works.
+**Cyber-Physical Systems and the Future of Urban Living**
+IGI Global, 2024. Co-author.
+[Repository](https://github.com/Kushal9889/Cyber-Physical-Systems-and-the-Future-of-Urban-Living-Decision-Making-Challenges-and-Opportunities)
 
-**📄 [IEEE Paper, ICAICCIT 2024](https://github.com/Kushal9889/Deep-Learning-for-Contextual-Bug-Detection-and-Automated-Fixes-in-Software-Systems) — first author.**
-Deep learning for contextual bug detection — model learns code context instead of relying on rules. Plus a [chapter in IGI Global](https://github.com/Kushal9889/Cyber-Physical-Systems-and-the-Future-of-Urban-Living-Decision-Making-Challenges-and-Opportunities) on cyber-physical-systems security.
-
----
-
-## where I've actually done this work
-
-**IMG Systems** (Boston / Remote · Aug 2024 – Apr 2025).
-Built the agentic document pipeline and screening workflows. Apache Tika + LLM extraction handling **5,247 profiles/month**. Pydantic-validated screening that cut manual review time by **70%**. FastAPI microservices on Kubernetes — shaved **25%** off API p95 latency through query optimization + caching. Wired the CI/CD that made zero-downtime deploys actually zero-downtime.
-
-**Growaza** (India · Jan – Jul 2024).
-SaaS. Redis caching + async AJAX bumped API response speed by **30%** for 1K+ DAU. D3.js analytics dashboard tracking **2,000+ SKUs** at **98% data accuracy**. Secure REST APIs with JWT + RBAC on AWS EC2/S3. Delivered 3 product features ahead of schedule.
-
-> The full CV-format version lives on [LinkedIn](https://linkedin.com/in/kushal-gaddamwar). A GitHub README is not the place for a bullet dump.
+Both repositories carry a `CITATION.cff`, so GitHub's **Cite this repository** button returns the correct BibTeX rather than a citation for the code.
 
 ---
 
-## how I work
+### where this breaks
 
-- I write the failing test before I write the Slack message.
-- I document the deletion, not just the addition.
-- I read the docs before I read the StackOverflow answer.
-- I leave the codebase 5% better than I found it on every PR.
-- Reviewers tell me my PRs are boring to merge. I take that as the compliment.
+Written because a profile that only lists strengths is not worth reading, and because these are the questions an interviewer asks anyway.
 
----
+**BU Life AI does not survive its own success.** It runs on a Render free tier. The first thing to fail under load is CPU throttling and cold starts, then Neon connection limits. The fix is a paid tier with persistent workers and PgBouncer pooling. I have not needed it and have not pretended otherwise.
 
-## what I actually know
+**The paper's method needs data most teams do not have.** It depends on a large corpus of code annotated with bugs and their fixes, plus runtime metadata. Where that corpus is thin, accuracy degrades. Generalisation across languages is untested, and the paper says so.
 
-> Not a skills list. A map of the problem space I work inside.
-
-| layer | what I can reason about end-to-end |
-|---|---|
-| orchestration | LangGraph state graphs · supervisor pattern · conditional edges · parallel nodes · A2A · Google ADK |
-| reasoning | ReAct internals · scratchpad vs. final answer · CoT · self-reflection · when CoT *hurts* |
-| tool calling | typed schemas · Pydantic validation · failure modes · registry patterns · MCP |
-| memory | in-context budgeting · episodic threads · semantic retrieval · forgetting |
-| RAG | BM25 + dense hybrid · EnsembleRetriever · chunking · re-ranking · why pure semantic dies on keywords |
-| context engineering | drift · token budgets · sliding-window compression · intent re-anchoring · prompt-injection surface |
-| cost control | model cascade routing · response caching · batching · **when not to call an LLM** |
-| streaming | SSE vs. WebSocket · async FastAPI generators · backpressure · token-level UX |
-| observability | LangSmith tracing · reasoning replay · per-node latency + cost attribution |
-| multi-model | OpenAI · Claude · Gemini · Groq · NVIDIA NIM · AWS Bedrock · Llama — when each one matters |
-| stores | PGVector · ChromaDB · Pinecone · Redis · Postgres · Mongo · Neo4j · HNSW indexes |
-| infra | Docker · Kubernetes · GitHub Actions CI/CD · zero-downtime · singleton init · cold-start mitigation |
-| security | prompt injection · tool sandboxing · output validation before exec · untrusted input |
+**My first Pydantic schemas at IMG Systems were too strict.** Documents that were merely unusual got rejected alongside genuinely malformed ones. I fixed it with fallback validators and logging on the rejection path, which turned silent data loss into a visible signal. That is the mistake I would tell you about unprompted.
 
 ---
 
-## github pulse
+### where I have done this
 
-<div align="center">
+**Boston University, Questrom Computational Lab**, AI Engineer, Graduate Researcher. May 2026 to present.
 
-<!--START_SECTION:waka-->
-> *WakaTime weekly coding stats render here after the workflow runs — involuntary data, the most credible "I code every day" signal.*
-<!--END_SECTION:waka-->
+**IMG Systems**, Software Engineering Intern, Remote. August 2024 to April 2025.
+Extended a Python document-parsing pipeline on Apache Tika, raising extraction accuracy **20%** across more than **5,000** candidate profiles a month and cutting recruiter screening time **15%**. Pydantic structured-output validation against a JSON Schema reached **95% schema accuracy**. Containerised services on PostgreSQL and Redis with Docker trimmed REST latency **25%**.
 
-<br/>
-
-<img width="48%" src="https://github-readme-stats-one-steel-84.vercel.app/api?username=Kushal9889&show_icons=true&hide_border=true&bg_color=0d1117&title_color=58A6FF&icon_color=58A6FF&text_color=c9d1d9&count_private=true&include_all_commits=true"/>
-<img width="48%" src="https://streak-stats.demolab.com/?user=Kushal9889&theme=dark&hide_border=true&background=0d1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF"/>
-
-<br/><br/>
-
-<img width="90%" src="https://github-readme-activity-graph.vercel.app/graph?username=Kushal9889&bg_color=0d1117&color=58A6FF&line=58A6FF&point=ffffff&area=true&hide_border=true&custom_title=contribution%20pulse"/>
-
-<br/>
-
-<img width="90%" src="https://raw.githubusercontent.com/Kushal9889/Kushal9889/output/github-contribution-grid-snake-dark.svg" alt="contribution snake"/>
-
-</div>
+**Growaza**, Associate Software Engineer Intern, India. January to July 2024.
+Cut API response time **30%** with in-memory caching and asynchronous request handling, lifting engagement **22%** for more than **1,000** daily active users. MySQL inventory dashboard tracking **2,000+** SKUs. JWT and role-based access control on AWS EC2 and S3.
 
 ---
 
-<div align="center">
+### credentials
 
-<sub>If you're hiring for <b>agentic AI</b>, <b>applied AI</b>, <b>ML engineering</b>, or <b>AI-focused SWE</b> — summer or full-time '26 — I respond inside 24 hours.</sub>
+[NVIDIA-Certified Professional: Agentic AI](https://www.credly.com/badges/c8f105aa-1815-40cc-85a1-e5a2ef20c920/public_url) is a proctored vendor exam, verifiable on Credly. Plus AWS Cloud Technical Essentials, Google Cloud Fundamentals, and three completed courses of IBM's RAG and Agentic AI programme, each individually verifiable.
 
-<br/><br/>
+---
 
-<sub><a href="https://linkedin.com/in/kushal-gaddamwar">linkedin</a> · <a href="mailto:kushal7887pd@gmail.com">email</a> · <a href="https://bulife-ai.netlify.app">live demo</a></sub>
-
-</div>
-
-<!-- Agentic AI Multi-Agent LangGraph LangChain LangSmith ReAct Supervisor Pattern MCP A2A Google ADK RAG Hybrid Retrieval BM25 Dense Retrieval EnsembleRetriever Embeddings Vector Search PGVector ChromaDB Pinecone Semantic Search Chunking Re-ranking OpenAI GPT-4 Claude Anthropic Gemini Groq Llama NVIDIA NIM AWS Bedrock Prompt Engineering Structured Outputs Tool Calling Function Calling Pydantic Python Async Python FastAPI REST APIs Microservices Node.js Express TypeScript JavaScript React Next.js Redux PostgreSQL MySQL MongoDB Neo4j Redis D3.js AWS EC2 S3 Lambda API Gateway Docker Kubernetes GitHub Actions CI/CD Zero-Downtime SSE WebSocket LLM Observability Distributed Tracing Production AI MLOps LLMOps Context Engineering Token Budgeting Cost Optimization Model Cascade IEEE Published Researcher Boston University MSCS F-1 OPT 2026 -->
+If you are working on multi-agent coordination or agent evaluation, I would rather compare notes than network.
