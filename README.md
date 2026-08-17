@@ -9,8 +9,11 @@ AI Engineer at **Boston University's Questrom Computational Lab**, MSCS candidat
 ### recently
 
 <!--START_ACTIVITY-->
-- Reported [langchain-ai/deepagents#4846](https://github.com/langchain-ai/deepagents/issues/4846); fixed by a maintainer in [#4925](https://github.com/langchain-ai/deepagents/pull/4925)
-- Rebuilt [kushal-portfolio](https://github.com/Kushal9889/kushal-portfolio) around a LangGraph agent with measured latency
+- CompositeBackend.ls("/") and als("/") silently swallow default-backend errors, returning a successful route-only listing in [langchain-ai/deepagents](https://github.com/langchain-ai/deepagents)
+- null in [Kushal9889/BU-Life-AI](https://github.com/Kushal9889/BU-Life-AI)
+- null in [Kushal9889/CF_Ladder](https://github.com/Kushal9889/CF_Ladder)
+- null in [Kushal9889/Cyber-Physical-Systems-and-the-Future-of-Urban-Living-Decision-Making-Challenges-and-Opportunities](https://github.com/Kushal9889/Cyber-Physical-Systems-and-the-Future-of-Urban-Living-Decision-Making-Challenges-and-Opportunities)
+- null in [Kushal9889/Deep-Learning-for-Contextual-Bug-Detection-and-Automated-Fixes-in-Software-Systems](https://github.com/Kushal9889/Deep-Learning-for-Contextual-Bug-Detection-and-Automated-Fixes-in-Software-Systems)
 <!--END_ACTIVITY-->
 
 ---
