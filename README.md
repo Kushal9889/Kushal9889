@@ -9,11 +9,8 @@ AI Engineer at **Boston University's Questrom Computational Lab**, MSCS candidat
 ### recently
 
 <!--START_ACTIVITY-->
-- null in [Kushal9889/BU-Life-AI](https://github.com/Kushal9889/BU-Life-AI)
-- null in [Kushal9889/CF_Ladder](https://github.com/Kushal9889/CF_Ladder)
-- null in [Kushal9889/Cyber-Physical-Systems-and-the-Future-of-Urban-Living-Decision-Making-Challenges-and-Opportunities](https://github.com/Kushal9889/Cyber-Physical-Systems-and-the-Future-of-Urban-Living-Decision-Making-Challenges-and-Opportunities)
-- null in [Kushal9889/Deep-Learning-for-Contextual-Bug-Detection-and-Automated-Fixes-in-Software-Systems](https://github.com/Kushal9889/Deep-Learning-for-Contextual-Bug-Detection-and-Automated-Fixes-in-Software-Systems)
-- null in [Kushal9889/Intelligent_document-QA-system](https://github.com/Kushal9889/Intelligent_document-QA-system)
+- ClientSessionGroup: a rejected connect_to_server leaves its transport running — the session is established before its components are validated in [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk)
+- null in [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk)
 <!--END_ACTIVITY-->
 
 ---
