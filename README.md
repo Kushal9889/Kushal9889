@@ -10,6 +10,9 @@ AI Engineer at **Boston University's Questrom Computational Lab**, MSCS candidat
 
 <!--START_ACTIVITY-->
 - ClientSessionGroup: a rejected connect_to_server leaves its transport running — the session is established before its components are validated in [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk)
+- Fusion inside a prefetch is computed per shard, so its scores and score_threshold depend on shard_number in [qdrant/qdrant](https://github.com/qdrant/qdrant)
+- [Bug]: max_iterations and early_stopping_method passed to .run() are ignored when the Context is reused in [run-llama/llama_index](https://github.com/run-llama/llama_index)
+- [Bug]: pythonic / llama4_pythonic tool parsers return a tool call when streaming but raw text when not (trailing prose, leading-underscore names) in [vllm-project/vllm](https://github.com/vllm-project/vllm)
 - null in [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk)
 <!--END_ACTIVITY-->
 
