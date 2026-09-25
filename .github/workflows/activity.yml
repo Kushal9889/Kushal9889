@@ -26,14 +26,18 @@ jobs:
         run: |
           set -euo pipefail
 
-          # Public events, newest first. Issues and pull requests only: a push
-          # event says nothing a reader cares about.
-          gh api "users/${{ github.repository_owner }}/events/public?per_page=100" \
-            --jq '[.[]
-                   | select(.type == "IssuesEvent" or .type == "PullRequestEvent")
-                   | select(.payload.action == "opened")
-                   | "- \(.payload.issue.title // .payload.pull_request.title) in [\(.repo.name)](https://github.com/\(.repo.name))"]
-                  | unique | .[0:5] | .[]' > /tmp/lines.txt || true
+          # The events API no longer carries pull-request titles (they printed as "null"), so read the
+          # search API instead: my issues and PRs in other people's repositories, with their state.
+          # Closed-unmerged PRs and issues closed as not planned are left out.
+          gh api "search/issues?q=author:${{ github.repository_owner }}+is:public+-user:${{ github.repository_owner }}&sort=created&order=desc&per_page=30" \
+            --jq '.items[]
+                  | select(.pull_request == null or .state == "open" or .pull_request.merged_at != null)
+                  | select(.state_reason != "not_planned")
+                  | (.repository_url | sub("https://api.github.com/repos/"; "")) as $r
+                  | (if .pull_request == null then (if .state == "open" then "issue, open" else "issue, fixed" end)
+                     elif .pull_request.merged_at != null then "PR, merged" else "PR, under review" end) as $k
+                  | "- [\($r)#\(.number)](\(.html_url)) (\($k)): \(.title)"' \
+            | head -n 8 > /tmp/lines.txt || true
 
           # Fail closed. An empty API response must not blank the section.
           if [ ! -s /tmp/lines.txt ]; then
