@@ -1,0 +1,10 @@
+[
+  {"repo": "vllm-project/vllm", "number": 56846, "name": "vLLM",
+   "what": "pythonic tool parsers agree across streaming and non-streaming modes", "report": 56840},
+  {"repo": "run-llama/llama_index", "number": 23053, "name": "LlamaIndex",
+   "what": "run-level `max_iterations` and `early_stopping_method` apply on a reused Context", "report": 23051},
+  {"repo": "langchain-ai/deepagents", "number": 4846, "name": "LangChain Deep Agents",
+   "what": "`CompositeBackend.ls(\"/\")` swallowed default-backend errors; reproduction filed", "fix": 4925},
+  {"repo": "modelcontextprotocol/python-sdk", "number": 3490, "name": "MCP Python SDK",
+   "what": "a rejected `connect_to_server` leaves its transport running"}
+]

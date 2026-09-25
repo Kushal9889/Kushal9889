@@ -1,11 +1,8 @@
-name: recently
+name: refresh open-source blocks
 
-# Rewrites the "recently" block from real public events.
-#
-# The previous version of this repository ran a workflow that bumped a
-# timestamp every six hours. It produced 297 commits that changed nothing, and
-# anyone opening the commit list could see that is all they were. This one runs
-# weekly and only commits when the content actually changed.
+# Rewrites the README's OSS table and "recently" feed from live GitHub data (.github/scripts/refresh.py):
+# PR/issue state and each repository's star count as plain text, open-source repositories with 1,000+ stars only.
+# Weekly, and it commits only when the content actually changed (no timestamp-bump commits).
 on:
   schedule:
     - cron: "0 6 * * 1"
@@ -15,57 +12,20 @@ permissions:
   contents: write
 
 jobs:
-  update:
+  refresh:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Build the block
+      - name: Rebuild the generated blocks
         env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-
-          # The events API no longer carries pull-request titles (they printed as "null"), so read the
-          # search API instead: my issues and PRs in other people's repositories, with their state.
-          # Closed-unmerged PRs and issues closed as not planned are left out.
-          gh api "search/issues?q=author:${{ github.repository_owner }}+is:public+-user:${{ github.repository_owner }}&sort=created&order=desc&per_page=30" \
-            --jq '.items[]
-                  | select(.pull_request == null or .state == "open" or .pull_request.merged_at != null)
-                  | select(.state_reason != "not_planned")
-                  | select(.title | test("^(Add|Create|Update|Delete) files? via upload|^Add files via") | not)  # GitHub web-upload default titles
-                  | (.repository_url | sub("https://api.github.com/repos/"; "")) as $r
-                  | (if .pull_request == null then (if .state == "open" then "issue, open" else "issue, fixed" end)
-                     elif .pull_request.merged_at != null then "PR, merged" else "PR, under review" end) as $k
-                  | "- [\($r)#\(.number)](\(.html_url)) (\($k)): \(.title)"' \
-            | head -n 8 > /tmp/lines.txt || true
-
-          # Fail closed. An empty API response must not blank the section.
-          if [ ! -s /tmp/lines.txt ]; then
-            echo "no events returned, leaving the existing block alone"
-            exit 0
-          fi
-
-          python3 - <<'PY'
-          import pathlib, re
-          block = pathlib.Path("/tmp/lines.txt").read_text().strip()
-          readme = pathlib.Path("README.md")
-          text = readme.read_text()
-          new = re.sub(
-              r"<!--START_ACTIVITY-->.*?<!--END_ACTIVITY-->",
-              f"<!--START_ACTIVITY-->\n{block}\n<!--END_ACTIVITY-->",
-              text,
-              flags=re.S,
-          )
-          if new != text:
-              readme.write_text(new)
-          PY
-
+          GITHUB_TOKEN: ${{ github.token }}
+          OWNER: ${{ github.repository_owner }}
+        run: python3 .github/scripts/refresh.py
       - name: Commit only if something changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git diff --quiet README.md && echo "nothing changed" && exit 0
           git add README.md
-          git commit -m "Refresh the recently block"
+          git commit -m "Refresh open-source status and stars"
           git push
