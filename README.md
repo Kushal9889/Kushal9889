@@ -1,6 +1,6 @@
 I build multi-agent systems and the retrieval that keeps them honest.
 
-AI Engineer at **Boston University's Questrom Computational Lab**, MSCS candidate, graduating December 2026. First author on an IEEE paper in automated program repair. Available January 2027.
+AI Engineer at **Boston University's Questrom Computational Lab** and Lead Backend Engineer at the **Questrom Center for Action Learning**. M.S. in Computer Science, graduating December 2026. **NVIDIA-Certified Professional: Agentic AI** and **Claude Certified Developer**. First author on an IEEE paper in automated program repair. Available January 2027 (F-1 OPT, STEM OPT eligible).
 
 [Portfolio](https://kushal-portfolio-223.netlify.app) · [LinkedIn](https://linkedin.com/in/kushal-gaddamwar) · [ORCID 0009-0009-9318-1616](https://orcid.org/0009-0009-9318-1616) · kushal7887pd@gmail.com
 
@@ -34,6 +34,10 @@ A production agentic RAG platform on Azure for an enterprise consulting client, 
 ---
 
 ### open source
+
+**Open pull requests, under review:** [vllm-project/vllm#56846](https://github.com/vllm-project/vllm/pull/56846) (vLLM, 90k+ stars): make the pythonic tool parsers agree across streaming and non-streaming modes, from my report [#56840](https://github.com/vllm-project/vllm/issues/56840). [run-llama/llama_index#23053](https://github.com/run-llama/llama_index/pull/23053) (LlamaIndex, 50k+ stars): apply run-level `max_iterations` and `early_stopping_method` on a reused Context, from my report [#23051](https://github.com/run-llama/llama_index/issues/23051).
+
+**Reported** [modelcontextprotocol/python-sdk#3490](https://github.com/modelcontextprotocol/python-sdk/issues/3490) (MCP Python SDK, 24k+ stars): a rejected `connect_to_server` leaves its transport running.
 
 **Reported** [langchain-ai/deepagents#4846](https://github.com/langchain-ai/deepagents/issues/4846): `CompositeBackend.ls("/")` aggregated results at the root and discarded errors from the default backend, so a caller whose backend had failed saw a healthy but nearly empty filesystem. Filed with a reproduction and a proposed fix mirroring the existing `grep` root-merge check. A LangChain maintainer authored and merged the fix in [#4925](https://github.com/langchain-ai/deepagents/pull/4925) three days later, crediting the report by name.
 
@@ -69,19 +73,25 @@ Written because a profile that only lists strengths is not worth reading, and be
 
 ### where I have done this
 
+**Boston University, Questrom Center for Action Learning**, Lead Backend Engineer. August 2026 to present.
+An agentic SDLC harness that holds Claude Code agents to the same gates as human engineers in a regulated client codebase: least-privilege permissions, context-routing hooks, CodeRabbit review linked to Linear through MCP, shipped as a plugin. A Django REST Framework and PostgreSQL backend with data-layer RBAC, revocable JWT, audit logs and an idempotent recurrence engine; CI fails when the API contract drifts from the React frontend.
+
 **Boston University, Questrom Computational Lab**, AI Engineer, Graduate Researcher. May 2026 to present.
+A 14-tool LangGraph agent on Azure OpenAI for the enterprise client Sikich; **5 production PRs** merged; customer-facing requirements, demos and weekly knowledge transfer.
+
+**Boston University**, Graduate Teaching Assistant, MET CS 664 Artificial Intelligence (about 40 graduate students). September 2026 to present.
 
 **IMG Systems**, Software Engineering Intern, Remote. August 2024 to April 2025.
 Extended a Python document-parsing pipeline on Apache Tika, raising extraction accuracy **20%** across more than **5,000** candidate profiles a month and cutting recruiter screening time **15%**. Pydantic structured-output validation against a JSON Schema reached **95% schema accuracy**. Containerised services on PostgreSQL and Redis with Docker trimmed REST latency **25%**.
 
-**Growaza**, Associate Software Engineer Intern, India. January to July 2024.
+**Growaza**, Associate Software Engineer Intern, Remote. January to July 2024.
 Cut API response time **30%** with in-memory caching and asynchronous request handling, lifting engagement **22%** for more than **1,000** daily active users. MySQL inventory dashboard tracking **2,000+** SKUs. JWT and role-based access control on AWS EC2 and S3.
 
 ---
 
 ### credentials
 
-[NVIDIA-Certified Professional: Agentic AI](https://www.credly.com/badges/c8f105aa-1815-40cc-85a1-e5a2ef20c920/public_url) is a proctored vendor exam, verifiable on Credly. Plus AWS Cloud Technical Essentials, Google Cloud Fundamentals, and three completed courses of IBM's RAG and Agentic AI programme, each individually verifiable.
+[NVIDIA-Certified Professional: Agentic AI](https://www.credly.com/badges/c8f105aa-1815-40cc-85a1-e5a2ef20c920/public_url) is a proctored vendor exam, verifiable on Credly. So is [Claude Certified Developer - Foundations](https://www.credly.com/badges/54ca4478-339e-496c-a4c4-2ae6c4c339ca/public_url) (Anthropic, 2026). Plus AWS Cloud Technical Essentials, Google Cloud Fundamentals, and three completed courses of IBM's RAG and Agentic AI programme, each individually verifiable.
 
 ---
 
