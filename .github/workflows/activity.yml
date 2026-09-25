@@ -33,6 +33,7 @@ jobs:
             --jq '.items[]
                   | select(.pull_request == null or .state == "open" or .pull_request.merged_at != null)
                   | select(.state_reason != "not_planned")
+                  | select(.title | test("^(Add|Create|Update|Delete) files? via upload|^Add files via") | not)  # GitHub web-upload default titles
                   | (.repository_url | sub("https://api.github.com/repos/"; "")) as $r
                   | (if .pull_request == null then (if .state == "open" then "issue, open" else "issue, fixed" end)
                      elif .pull_request.merged_at != null then "PR, merged" else "PR, under review" end) as $k
