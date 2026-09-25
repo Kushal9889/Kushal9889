@@ -16,7 +16,6 @@ AI Engineer at **Boston University's Questrom Computational Lab** and Lead Backe
 - [run-llama/llama_index#23051](https://github.com/run-llama/llama_index/issues/23051) (issue, open): [Bug]: max_iterations and early_stopping_method passed to .run() are ignored when the Context is reused
 - [modelcontextprotocol/python-sdk#3490](https://github.com/modelcontextprotocol/python-sdk/issues/3490) (issue, open): ClientSessionGroup: a rejected connect_to_server leaves its transport running — the session is established before its components are validated
 - [langchain-ai/deepagents#4846](https://github.com/langchain-ai/deepagents/issues/4846) (issue, fixed): CompositeBackend.ls("/") and als("/") silently swallow default-backend errors, returning a successful route-only listing
-- [artisticdrake/UniGuide#1](https://github.com/artisticdrake/UniGuide/pull/1) (PR, merged): Add files via ui MVP uploa
 <!--END_ACTIVITY-->
 
 ---
