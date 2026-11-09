@@ -111,10 +111,10 @@ Status and star counts below are rewritten weekly from the GitHub API by [a work
 <!--START_OSS-->
 | Project | Contribution | Status | Stars |
 |---|---|---|---|
-| [vLLM](https://github.com/vllm-project/vllm) | PR [#56846](https://github.com/vllm-project/vllm/pull/56846): pythonic tool parsers agree across streaming and non-streaming modes, from my report [#56840](https://github.com/vllm-project/vllm/issues/56840) | **PR, under review** <img alt="live status" src="https://img.shields.io/github/pulls/detail/state/vllm-project/vllm/56846?style=flat-square&label=live"> | **96.1k** ★ |
-| [LlamaIndex](https://github.com/run-llama/llama_index) | PR [#23053](https://github.com/run-llama/llama_index/pull/23053): run-level `max_iterations` and `early_stopping_method` apply on a reused Context, from my report [#23051](https://github.com/run-llama/llama_index/issues/23051) | **PR, closed** <img alt="live status" src="https://img.shields.io/github/pulls/detail/state/run-llama/llama_index/23053?style=flat-square&label=live"> | **52.8k** ★ |
-| [LangChain Deep Agents](https://github.com/langchain-ai/deepagents) | issue [#4846](https://github.com/langchain-ai/deepagents/issues/4846): `CompositeBackend.ls("/")` swallowed default-backend errors; reproduction filed; maintainer fix [#4925](https://github.com/langchain-ai/deepagents/pull/4925) credits my report | **issue, fixed** <img alt="live status" src="https://img.shields.io/github/issues/detail/state/langchain-ai/deepagents/4846?style=flat-square&label=live"> | **30.9k** ★ |
-| [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) | issue [#3490](https://github.com/modelcontextprotocol/python-sdk/issues/3490): a rejected `connect_to_server` leaves its transport running | **issue, open** <img alt="live status" src="https://img.shields.io/github/issues/detail/state/modelcontextprotocol/python-sdk/3490?style=flat-square&label=live"> | **24.7k** ★ |
+| [vLLM](https://github.com/vllm-project/vllm) | PR [#56846](https://github.com/vllm-project/vllm/pull/56846): pythonic tool parsers agree across streaming and non-streaming modes, from my report [#56840](https://github.com/vllm-project/vllm/issues/56840) | **PR, under review** <img alt="live status" src="https://img.shields.io/github/pulls/detail/state/vllm-project/vllm/56846?style=flat-square&label=live"> | **96.6k** ★ |
+| [LlamaIndex](https://github.com/run-llama/llama_index) | PR [#23053](https://github.com/run-llama/llama_index/pull/23053): run-level `max_iterations` and `early_stopping_method` apply on a reused Context, from my report [#23051](https://github.com/run-llama/llama_index/issues/23051) | **PR, closed** <img alt="live status" src="https://img.shields.io/github/pulls/detail/state/run-llama/llama_index/23053?style=flat-square&label=live"> | **52.9k** ★ |
+| [LangChain Deep Agents](https://github.com/langchain-ai/deepagents) | issue [#4846](https://github.com/langchain-ai/deepagents/issues/4846): `CompositeBackend.ls("/")` swallowed default-backend errors; reproduction filed; maintainer fix [#4925](https://github.com/langchain-ai/deepagents/pull/4925) credits my report | **issue, fixed** <img alt="live status" src="https://img.shields.io/github/issues/detail/state/langchain-ai/deepagents/4846?style=flat-square&label=live"> | **31.1k** ★ |
+| [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) | issue [#3490](https://github.com/modelcontextprotocol/python-sdk/issues/3490): a rejected `connect_to_server` leaves its transport running | **issue, open** <img alt="live status" src="https://img.shields.io/github/issues/detail/state/modelcontextprotocol/python-sdk/3490?style=flat-square&label=live"> | **24.8k** ★ |
 <!--END_OSS-->
 
 **Reported** [langchain-ai/deepagents#4846](https://github.com/langchain-ai/deepagents/issues/4846): `CompositeBackend.ls("/")` aggregated results at the root and discarded errors from the default backend, so a caller whose backend had failed saw a healthy but nearly empty filesystem. Filed with a reproduction and a proposed fix mirroring the existing `grep` root-merge check. A LangChain maintainer authored and merged the fix in [#4925](https://github.com/langchain-ai/deepagents/pull/4925) three days later, crediting the report by name.
@@ -126,12 +126,12 @@ Status and star counts below are rewritten weekly from the GitHub API by [a work
 <summary><b>recently</b>: my newest issues and pull requests in open-source projects with 1,000+ stars, with live star counts, refreshed weekly</summary>
 
 <!--START_ACTIVITY-->
-- [PrefectHQ/fastmcp#5980](https://github.com/PrefectHQ/fastmcp/pull/5980) · 28.3k stars, PR, under review: Forward URL-mode elicitation through the proxy
-- [PrefectHQ/fastmcp#5979](https://github.com/PrefectHQ/fastmcp/issues/5979) · 28.3k stars, issue, open: Proxy relays URL-mode elicitation as an empty form
-- [PrefectHQ/fastmcp#5978](https://github.com/PrefectHQ/fastmcp/pull/5978) · 28.3k stars, PR, under review: Forward sampling tools through the proxy's sampling relay
-- [PrefectHQ/fastmcp#5977](https://github.com/PrefectHQ/fastmcp/issues/5977) · 28.3k stars, issue, open: ProxyClient drops tools and tool_choice from relayed sampling requests
-- [vllm-project/vllm#56846](https://github.com/vllm-project/vllm/pull/56846) · 96.1k stars, PR, under review: [Bugfix][Tool Parser] Make pythonic tool parsers agree across streaming modes
-- [qdrant/qdrant#10640](https://github.com/qdrant/qdrant/issues/10640) · 35.4k stars, issue, open: Fusion inside a prefetch is computed per shard, so its scores and score_threshold depend on shard_number
+- [PrefectHQ/fastmcp#5980](https://github.com/PrefectHQ/fastmcp/pull/5980) · 28.4k stars, PR, under review: Forward URL-mode elicitation through the proxy
+- [PrefectHQ/fastmcp#5979](https://github.com/PrefectHQ/fastmcp/issues/5979) · 28.4k stars, issue, open: Proxy relays URL-mode elicitation as an empty form
+- [PrefectHQ/fastmcp#5978](https://github.com/PrefectHQ/fastmcp/pull/5978) · 28.4k stars, PR, under review: Forward sampling tools through the proxy's sampling relay
+- [PrefectHQ/fastmcp#5977](https://github.com/PrefectHQ/fastmcp/issues/5977) · 28.4k stars, issue, open: ProxyClient drops tools and tool_choice from relayed sampling requests
+- [vllm-project/vllm#56846](https://github.com/vllm-project/vllm/pull/56846) · 96.6k stars, PR, under review: [Bugfix][Tool Parser] Make pythonic tool parsers agree across streaming modes
+- [qdrant/qdrant#10640](https://github.com/qdrant/qdrant/issues/10640) · 35.5k stars, issue, open: Fusion inside a prefetch is computed per shard, so its scores and score_threshold depend on shard_number
 <!--END_ACTIVITY-->
 
 </details>
